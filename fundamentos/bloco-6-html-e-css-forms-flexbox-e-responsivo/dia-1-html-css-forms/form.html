@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms HTML</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <div>
+        <fieldset>
+          <div>
+            <label for="name">Nome:</label>
+            <input type="text" name="name" id="name" maxlength="40" required />
+          </div>
+          <div>
+            <label for="e-mail">E-mail:</label>
+            <input
+              type="text"
+              name="email"
+              id="e-mail"
+              maxlength="50"
+              required
+            />
+          </div>
+          <div>
+            <label for="cpf-form">CPF:</label>
+            <input
+              type="text"
+              name="cpf"
+              id="cpf-form"
+              maxlength="11"
+              required
+            />
+          </div>
+          <div>
+            <label for="Adress">Endereço:</label>
+            <input
+              type="text"
+              name="endereço"
+              id="Adress"
+              maxlength="200"
+              required
+            />
+          </div>
+          <div>
+            <label for="city">Cidade:</label>
+            <input
+              type="text"
+              name="cidade"
+              id="city"
+              maxlength="28"
+              required
+            />
+          </div>
+          <div class="line-content">
+            <label for="state">Estado: </label>
+            <select name="state" id="state" required>
+              <option disabled selected value>Escolha seu Estado</option>
+            </select>
+          </div>
+          <div>
+            <label for="tipo">Tipo de Imóvel:</label>
+            <input
+              type="radio"
+              name="tipo"
+              id="apartamento"
+              value="apartamento"
+              required
+            />
+            <span>Apartamento</span>
+            <input type="radio" name="tipo" id="casa" value="casa" required />
+            <span>Casa</span>
+          </div>
+        </fieldset>
+      </div>
+
+      <div>
+          <fieldset>
+              <div>
+                  <label for="resumoCurriculum">Resumo do Curriculum</label>
+                  <textarea name="resumoCurriculum" id="resumoCurriculum" cols="30" rows="20" maxlength="1000" required></textarea>
+              </div>
+              <div>
+                  <label for="cargo">Cargo:</label>
+                  <input type="text" name="cargo" id="cargo" maxlength="40" required>
+              </div>
+              <div>
+                  <label for="descricao">Descrição do Cargo:</label>
+                  <input type="text" name="descricao" id="descricao" maxlength="200" required>
+              </div>
+              <div>
+                  <label for="dataInicio">Data de início:</label>
+                  <input type="text" name="dataInicio" id="dataInicio" required>
+
+              </div>
+          </fieldset>
+      </div>
+
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
