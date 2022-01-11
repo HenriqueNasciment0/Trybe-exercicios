@@ -1,0 +1,260 @@
+html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+@media screen and (max-width: 500px) {
+
+    body {
+        background-color: black;
+        color: rgb(223, 223, 223);
+        
+    }
+    
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    header p {
+        font-size: xx-large;
+        text-align: center;
+
+    }
+    .ul {
+        display: flex;
+        font-size: xx-large;
+    }
+    .nav {
+        display: flex;
+        justify-content: center;
+    }
+    .ul li {
+        margin: 15px;
+        font-size: large;
+        align-content: center;
+        list-style: none;
+    }
+    .aside-one {
+        display: flex;
+        flex-direction: column;
+        font-size: x-large;
+    }
+    
+    .aside-one h2 {
+        align-self: center;
+    }
+
+    .aside-two {
+        display: flex;
+        flex-direction: column;
+        font-size: x-large;
+    }
+
+    .aside-two h2 {
+        align-self: center;
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column; 
+        
+    }
+    .main-content h1 {
+       text-align: center;
+       
+    }
+
+    .main-content p {
+        font-size: x-large;
+        text-align: center;
+        margin-left: 10px;
+        margin-right: 10px;
+       
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+    }
+    footer h3 {
+        font-size: xx-large;
+    }
+
+    footer p {
+        font-size: x-large;
+    }
+}
+
+@media screen and (min-width: 501px) {
+    body {
+        background-color: rgb(39, 5, 5);
+        color: white;
+    }
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    header p {
+        font-size: 3rem;
+        text-align: center;
+
+    }
+    .ul {
+        display: flex;
+    }
+    .nav {
+        display: flex;
+        justify-content: center;
+    }
+    .ul li {
+        margin: 15px;
+        font-size: 2rem;
+        align-content: center;
+        list-style: none;
+    }
+    .ul li:hover{
+        color: black;
+    }
+    .aside-one {
+        display: flex;
+        flex-direction: column;
+        font-size: x-large;
+    }
+    
+    .aside-one h2 {
+        align-self: center;
+    }
+
+    .aside-two {
+        display: flex;
+        flex-direction: column;
+        font-size: x-large;
+    }
+
+    .aside-two h2 {
+        align-self: center;
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column; 
+        
+    }
+    .main-content h1 {
+       text-align: center;
+       
+    }
+
+    .main-content p {
+        font-size: x-large;
+        text-align: center;
+        margin-left: 10px;
+        margin-right: 10px;
+       
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+    }
+    footer h3 {
+        font-size: xx-large;
+    }
+
+    footer p {
+        font-size: x-large;
+    }
+
+    @media screen and (min-width: 769px) {
+        body {
+            background-color: rgb(34, 39, 4);
+            color: white;
+            max-width: 1368px;
+        }
+        header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            background-color: rgb(223, 219, 219);
+            color: rgb(34, 39, 4);
+        
+        }
+        header p {
+            font-size: 2rem;
+            font-style: oblique;
+            
+            
+        }
+        .ul {
+            
+        }
+        
+        }
+        .ul li {
+            margin: 15px;
+            font-size: 2rem;
+            list-style: none;
+        }
+        .ul li:hover{
+            color: black;
+        }
+        .asides {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .aside-one {
+            font-size: x-large;
+        }
+        
+        .aside-one h2 {
+            align-self: center;
+        }
+    
+        .aside-two {
+            
+            font-size: x-large;
+        }
+    
+        .aside-two h2 {
+            align-self: center;
+        }
+    
+        .main-content {
+            display: flex;
+            flex-direction: column; 
+            
+        }
+        .main-content h1 {
+           text-align: center;
+           
+        }
+    
+        .main-content p {
+            font-size: x-large;
+            text-align: center;
+            margin-left: 10px;
+            margin-right: 10px;
+           
+        }
+    
+        footer {
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+        }
+        footer h3 {
+            font-size: xx-large;
+        }
+    
+        footer p {
+            font-size: x-large;
+        }
+}
