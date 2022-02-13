@@ -1,4 +1,4 @@
-const names = [
+const names = [  // conta quantas pessoas tem a mesma idade
     {id: 1, name: 'Paulo', age: 28},
     {id: 2, name: 'Henrique', age: 28},
     {id: 3, name: 'Nascimento', age: 29},
