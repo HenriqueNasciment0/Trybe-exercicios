@@ -3,9 +3,8 @@ import React from "react";
 class Test extends React.Component {
     render() {
         const shoppingList = ['leite', 'arroz', 'feijão', 'banana', 'carne'];
-    const items = shoppingList.map((item) => {
-      console.log("item: ", item);
-      return (<li>{ item }</li>);
+    const items = shoppingList.map((item, index) => {
+      return (<li key={index}>{ item }</li>);
     });
 
     return (
