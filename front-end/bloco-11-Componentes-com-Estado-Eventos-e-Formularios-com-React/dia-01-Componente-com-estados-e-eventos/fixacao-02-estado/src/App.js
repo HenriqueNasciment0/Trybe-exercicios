@@ -24,18 +24,24 @@ class App extends React.Component {
     }))
   }
   putClick3 = () => {
-    this.setState((inicialClick, _props) => ({
-      oneClick3: inicialClick.oneClick3 + 1
+    //versão a baixo também funciona e fica mais clean para fazer o acumulo de valor usando o valor inicial
+    this.setState(({ oneClick3 }) => ({
+      oneClick3: oneClick3 + 1
     }))
   }
+
+  corPar(number) {
+   return number % 2 === 0 ? 'green' : 'white';
+  }
   render() {
+    const { oneClick, oneClick2, oneClick3 } = this.state;
     return (
       <div>
-      <button onClick={this.putClick}>{this.state.oneClick}</button>
-      <button onClick={this.putClick2}>{this.state.oneClick2}</button>
-      <button onClick={this.putClick3}>{this.state.oneClick3}</button>
+      <button onClick={ this.putClick } style={{ backgroundColor: this.corPar(oneClick) }}>{ oneClick }</button>
+      <button onClick={ this.putClick2 } style={{ backgroundColor: this.corPar(oneClick2) }}>{ oneClick2 }</button>
+      <button onClick={ this.putClick3 } style={{ backgroundColor: this.corPar(oneClick3) }}>{ oneClick3 }</button>
       </div>
-    )
+    );
   }
 }
 
