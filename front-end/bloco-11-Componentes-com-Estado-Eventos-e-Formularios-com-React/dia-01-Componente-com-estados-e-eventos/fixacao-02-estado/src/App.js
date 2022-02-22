@@ -31,7 +31,7 @@ class App extends React.Component {
   }
 
   corPar(number) {
-   return number % 2 === 0 ? 'green' : 'white';
+   return number % 2 === 0 ? 'green' : 'whitcde';
   }
   render() {
     const { oneClick, oneClick2, oneClick3 } = this.state;
