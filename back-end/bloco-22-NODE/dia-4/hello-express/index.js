@@ -16,14 +16,21 @@ function handleDrinks(_req, res) {
     res.status(200).json(drinks); // 4
 }
 
-app.get('/drinks/:id', function (req, res) {
-    const { id } = req.params;
-    const drink = drinks.find((d) => d.id === Number(id));
+// app.get('/drinks/:id', function (req, res) {
+//     const { id } = req.params;
+//     const drink = drinks.find((d) => d.id === Number(id));
 
-    if (!drink) return res.status(404).json({ message: 'Drink not found!' });
+//     if (!drink) return res.status(404).json({ message: 'Drink not found!' });
 
-    res.status(200).json(drink);
-});
+//     res.status(200).json(drink);
+// });
+
+app.get('/drinks/search', function (req, res) {
+    const { name } = req.query;
+    const drinkNome = drinks.filter((d) => d.name.includes(name));
+
+    res.status(200).json(drinkNome);
+})
 
 app.listen(3001, () => {
     console.log('Aplicação ouvindo na porta 3001');
