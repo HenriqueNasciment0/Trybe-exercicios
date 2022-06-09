@@ -36,3 +36,32 @@ const products = [  // usando map, apresenta somente os chaves name dos objetos 
 
 const justName = products.map((keys) => keys.name);
 console.log(justName);
+
+// -------
+
+const students = [ // retorna um string para cada indice do array, com a informação de quantas techs favoritas cada um tem.
+    { firstName: 'Robert', lastName: 'Smith', age: 33, techs: ['ReactJS', 'CSS', 'JSX', 'NodeJS'] },
+    { firstName: 'Joseph', lastName: 'Smith', age: 19, techs: ['ReactJS', 'HTML', 'NodeJS', 'CSS', 'JSX'] },
+    { firstName: 'Jennifer', lastName: 'Ainst', age: 25, techs: ['AngularJS', 'HTML', 'Typescript'] },
+    { firstName: 'Will', lastName: 'Hedge', age: 47, techs: ['NodeJS'] },
+    { firstName: 'Ross', lastName: 'Grunt', age: 39, techs: ['MongoDB', 'NodeJS'] },
+    { firstName: 'Julie', lastName: 'Lee', age: 53, techs: ['AdonisJS', 'Git', 'Javascript', 'Azure', 'Python'] },
+    { firstName: 'Lua', lastName: 'Abreu', age: 28, techs: [] },
+  ];
+
+  const textStudent = students.map((student, index) => {
+      const fullName = `${student.firstName} ${student.lastName}`;
+      const age = student.age;
+      const techs = student.techs.length;
+      if(techs > 1) {
+       return `${fullName} tem ${age} anos e ${techs} tecnologias favoritas!`;
+      } else if (techs === 1) {
+       return `${fullName} tem ${age} anos e ${techs} tecnologia favorita!`;        
+      } else {
+       return `${fullName} não tem tecnologia favorita.`;
+      }
+  });
+  console.log(textStudent);
+
+//   ---------
+
