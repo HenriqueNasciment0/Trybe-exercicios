@@ -27,8 +27,24 @@ const findSimpsonById = async (id) => {
     return print;
 }
 
+
+//Crie uma função que leia o arquivo simpsons.json e crie um novo arquivo, chamado simpsonFamily.json,
+//contendo as personagens com id de 1 a 4.
+
+const createSimpsons = async () => {
+    const file = await fs.readFile('./simpsons.json', 'utf-8');
+    const simpsons = JSON.parse(file);
+    const ids = [1, 2, 3, 4];
+    const simpsonsID = simpsons.filter((e) => ids.includes(Number(e.id)));
+    await fs.writeFile('./simpsonsFamily.json', JSON.stringify(simpsonsID))
+}
+
+
 const main = async () => {
     const simpsons = await findSimpsonById(2);
     console.log("ex. 2: ", simpsons);
+
+    await createSimpsons();
+    
 }
 main();
