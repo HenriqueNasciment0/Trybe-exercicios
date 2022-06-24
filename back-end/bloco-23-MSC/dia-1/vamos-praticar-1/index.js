@@ -12,8 +12,10 @@ app.get('/authors', async (_req, res) => {
 });
 
 app.get('/books', async (req, res) => {
-	const books = await Books.getAll();
-	
+	const { author_id } = req.query;
+
+	const books = author_id ? await Books.getByAuthorId(author_id) : await Books.getAll(); // se o id for pesquisado,
+	// retornar o autor que tem o id buscado no postman, se não, entrega todos os livros.
 	res.status(200).json(books);
 })
 
