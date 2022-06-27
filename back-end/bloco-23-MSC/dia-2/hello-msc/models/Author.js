@@ -39,8 +39,8 @@ Busca uma pessoa autora específica, a partir do seu ID
 */
 const findById = async (id) => {
   const query = `
-    SELECT id, first_name, middle_name, last_name 
-    FROM model_example.authors 
+    SELECT id, first_name, middle_name, last_name
+    FROM model_example.authors
     WHERE id = ?
   `;
 
@@ -59,8 +59,43 @@ const createAuthor = async (firstName, middleName, lastName) => {
   return [getNewAuthor({ id: author.insertId, firstName, middleName, lastName })];
 };
 
+const isValid = (firstName, middleName, lastName) => {
+  if (!firstName || typeof firstName !== 'string') return false;
+  if (!lastName || typeof lastName !== 'string') return false;
+  if (middleName && typeof middleName !== 'string') return false;
+
+  return true;
+};
+
+const findByName = async (firstName, middleName, lastName) => {
+  // Determinamos se devemos buscar com ou sem o nome do meio
+  let query = `
+    SELECT id, first_name, middle_name, last_name
+    FROM model_example.authors
+  `;
+
+  if (middleName) {
+    query += 'WHERE first_name = ? AND middle_name = ? AND last_name = ?';
+  } else {
+    query += 'WHERE first_name = ? AND last_name = ?';
+  }
+
+  const params = middleName ? [firstName, middleName, lastName] : [firstName, lastName];
+
+  // Executamos a consulta e retornamos o resultado
+  const [authorData] = await connection.execute(query, params);
+
+  // Caso nenhum author seja encontrado, devolvemos null
+  if (authorData.length === 0) return null;
+
+  // Caso contrário, retornamos o author encontrado
+  return serialize(authorData);
+};
+
 module.exports = {
   getAll,
   findById,
   createAuthor,
+  findByName,
+  isValid,
 };
