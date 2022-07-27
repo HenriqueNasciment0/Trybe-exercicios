@@ -80,3 +80,27 @@ class Casa {
 const casa1 = new Casa('plana', 'seminova', 7);
 
 console.log(casa1.apresentaCasa('Minha casa tem a seguinte configuração:'));
+
+
+// -----------------------------------
+
+interface Automovel {
+    modelo: string;
+    montadora: string;
+    ano: number;
+}
+
+interface Felino {
+    especie: string;
+    idade: number;
+    habitat: string;
+    alimentação: () => void;
+    sono: () => void;
+}
+
+interface Aeronave {
+    modelo: string;
+    marca: string;
+    ano: number;
+    ligarMotor: () => void;
+}
