@@ -14,3 +14,9 @@ function sum(soma: sumTwo) {
 }
 
 
+type address = {
+    rua: string;
+    numero: number;
+    bairro: string;
+    cidade: string;
+}
