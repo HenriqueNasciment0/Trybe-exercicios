@@ -29,3 +29,10 @@ enum acoes {
     visualizar,
     fechar,
 }
+
+enum cardeais {
+    Norte = 'N',
+    Leste = 'L',
+    Sul = 'S',
+    Oeste = 'O',
+}
