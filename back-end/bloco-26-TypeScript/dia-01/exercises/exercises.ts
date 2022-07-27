@@ -26,3 +26,16 @@ export function square(side: number): number {
 export function rectangle(base: number, height: number): number {
     return base * height;
 }
+
+export function losango(D: number, d: number): number {
+    return (D * d) / 2;
+}
+
+export function trapezio(B: number, b: number, h: number): number {
+    return ((B + b) * h) / 2;
+}
+
+export function circulo(r: number): number {
+    let π = 3.14;
+    return π * (r ** 2);
+}
