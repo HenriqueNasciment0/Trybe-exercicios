@@ -28,3 +28,29 @@ type cpf = number | string;
 type os = 'linux' | 'macOs' | 'windows';
 
 type vogais = 'a' | 'e' | 'i' | 'o' | 'u';
+
+
+interface Cachorro {
+    raça: string;
+    porte: string;
+    idade: number;
+    apresentaDog();
+}
+
+class Cachorro {
+
+    constructor(raça: string, porte: string, idade: number) {
+        this.raça = raça;
+        this.porte = porte;
+        this.idade = idade;
+    }
+
+    apresentaDog() {
+        return `Meu cachorro é da raça ${this.raça}, tem porte ${this.porte} e tem ${this.idade} anos.`
+    }
+
+}
+
+const dog1 = new Cachorro('hotweiller', 'médio', 8);
+
+console.log(dog1.apresentaDog());
