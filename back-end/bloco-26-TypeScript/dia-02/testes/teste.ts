@@ -20,3 +20,11 @@ type address = {
     bairro: string;
     cidade: string;
 }
+
+type materia = 'solido' | 'liquido' | 'gasoso';
+
+type cpf = number | string;
+
+type os = 'linux' | 'macOs' | 'windows';
+
+type vogais = 'a' | 'e' | 'i' | 'o' | 'u';
