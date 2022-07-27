@@ -54,3 +54,29 @@ class Cachorro {
 const dog1 = new Cachorro('hotweiller', 'médio', 8);
 
 console.log(dog1.apresentaDog());
+
+// ------------------------------------------------
+interface Casa {
+    tipo: string;
+    estado: string;
+    idade: number;
+    apresentaCasa(frase: string): string;
+}
+
+class Casa {
+
+    constructor(tipo: string, estado: string, idade: number) {
+        this.tipo = tipo;
+        this.estado = estado;
+        this.idade = idade;
+    }
+
+    apresentaCasa(frase: string) {
+        return `tipo ${this.tipo}, tem estado de ${this.estado} e tem ${this.idade} anos.`
+    }
+
+}
+
+const casa1 = new Casa('plana', 'seminova', 7);
+
+console.log(casa1.apresentaCasa('Minha casa tem a seguinte configuração:'));
