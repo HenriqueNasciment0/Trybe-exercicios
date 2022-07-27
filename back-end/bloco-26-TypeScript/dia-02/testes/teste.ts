@@ -1,5 +1,16 @@
-type passaro {
+type passaro = {
     maisDeUmAno: true;
     filhotes: 3;
     femea: false;
 }
+
+type sumTwo = {
+    num1: number;
+    num2: number;
+}
+
+function sum(soma: sumTwo) {
+    return soma.num1 + soma.num2;
+}
+
+
