@@ -7,7 +7,7 @@ const app = express();
 
 app.use(express.json());
 
-const PORT = 8000;
+const PORT = 7000;
 
 app.get('/', (req: Request, res: Response) => {
     res.status(StatusCodes.OK).send('Express + TypeScript')

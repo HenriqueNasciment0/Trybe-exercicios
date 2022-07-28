@@ -1,18 +1,18 @@
 import connection from '../models/connection';
-import BookModel from '../models/user.model';
+import UserModel from '../models/user.model';
 import User from '../interfaces/users.interfaces';
 
-class BookService {
-  public model: BookModel;
+class UsersService {
+  public model: UserModel;
 
   constructor() {
-    this.model = new BookModel(connection);
+    this.model = new UserModel(connection);
   }
 
   public async getAll(): Promise<User[]> {
-    const books = await this.model.getAll();
-    return books;
+    const users = await this.model.getAll();
+    return users;
   }
 }
 
-export default BookService;
+export default UsersService;

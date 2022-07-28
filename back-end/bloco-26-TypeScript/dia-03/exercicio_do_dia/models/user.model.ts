@@ -1,7 +1,7 @@
 import { Pool, ResultSetHeader } from 'mysql2/promise';
 import User from '../interfaces/users.interfaces';
 
-export default class BookModel {
+export default class UsersModel {
   public connection: Pool;
 
   constructor(connection: Pool) {
@@ -10,7 +10,7 @@ export default class BookModel {
 
   public async getAll(): Promise<User[]> {
     const result = await this.connection
-      .execute('SELECT * FROM books');
+      .execute('SELECT * FROM TypeScriptExpress.Users');
     const [rows] = result;
     return rows as User[];
   }
@@ -18,7 +18,7 @@ export default class BookModel {
   public async create(user: User): Promise<User> {
     const { name, email, password } = user;
     const result = await this.connection.execute<ResultSetHeader>(
-      'INSERT INTO books (title, price, author, isbn) VALUES (?, ?, ?, ?)',
+      'INSERT INTO books (name, email, password) VALUES (?, ?, ?)',
       [name, email, password],
     );
     const [dataInserted] = result;
