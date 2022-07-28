@@ -9,7 +9,7 @@ require("express-async-errors");
 const users_routes_1 = __importDefault(require("./routes/users.routes"));
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
-const PORT = 7000;
+const PORT = 6000;
 app.get('/', (req, res) => {
     res.status(http_status_codes_1.StatusCodes.OK).send('Express + TypeScript');
 });

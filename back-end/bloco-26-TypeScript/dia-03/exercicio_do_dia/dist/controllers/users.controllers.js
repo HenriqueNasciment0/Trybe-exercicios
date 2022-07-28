@@ -15,11 +15,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const http_status_codes_1 = require("http-status-codes");
 const users_services_1 = __importDefault(require("../services/users.services"));
 class UsersController {
-    constructor(bookService = new users_services_1.default()) {
-        this.bookService = bookService;
+    constructor(usersService = new users_services_1.default()) {
+        this.usersService = usersService;
         this.getAll = (_req, res) => __awaiter(this, void 0, void 0, function* () {
-            const books = yield this.bookService.getAll();
-            res.status(http_status_codes_1.StatusCodes.OK).json(books);
+            const users = yield this.usersService.getAll();
+            res.status(http_status_codes_1.StatusCodes.OK).json(users);
+        });
+        this.getById = (req, res) => __awaiter(this, void 0, void 0, function* () {
+            const id = parseInt(req.params.id);
+            const user = yield this.usersService.getById(id);
+            if (!user) {
+                return res.status(http_status_codes_1.StatusCodes.NOT_FOUND)
+                    .json({ message: 'User not found!' });
+            }
+            res.status(http_status_codes_1.StatusCodes.OK).json(user);
         });
     }
 }

@@ -21,6 +21,15 @@ class UsersModel {
             return rows;
         });
     }
+    getById(id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const result = yield this.connection
+                .execute('SELECT * FROM TypeScriptExpress.Users WHERE id=?', [id]);
+            const [rows] = result;
+            const [user] = rows;
+            return user;
+        });
+    }
     create(user) {
         return __awaiter(this, void 0, void 0, function* () {
             const { name, email, password } = user;

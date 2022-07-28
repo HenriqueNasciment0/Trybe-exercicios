@@ -8,4 +8,5 @@ const users_controllers_1 = __importDefault(require("../controllers/users.contro
 const router = (0, express_1.Router)();
 const usersController = new users_controllers_1.default();
 router.get('/users', usersController.getAll);
+router.get('/users/:id', usersController.getById);
 exports.default = router;

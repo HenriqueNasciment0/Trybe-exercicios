@@ -7,4 +7,6 @@ const usersController = new UsersController();
 
 router.get('/users', usersController.getAll);
 
+router.get('/users/:id', usersController.getById);
+
 export default router;
