@@ -1,5 +1,5 @@
 interface IEmployee {
-    registration: number;
+    registration: string;
     salary: number;
     admissionDate: Date;
 
