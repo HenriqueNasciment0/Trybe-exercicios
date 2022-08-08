@@ -40,3 +40,5 @@ class Person {
     if (Person.getAge(value) > 120) throw new Error('A pessoa deve ter no máximo 120 anos.');
     }
 }
+
+export default Person;
