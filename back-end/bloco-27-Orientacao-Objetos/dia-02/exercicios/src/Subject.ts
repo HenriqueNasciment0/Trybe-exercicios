@@ -16,3 +16,5 @@ class Subject {
         if(!value || value.length < 3) throw new Error('O nome tem que possuir no mínimo 3 caracteres');
     }
 }
+
+export default Subject;

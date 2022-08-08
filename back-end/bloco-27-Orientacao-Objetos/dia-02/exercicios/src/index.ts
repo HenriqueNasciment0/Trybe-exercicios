@@ -1,15 +1,9 @@
-import Employee from './IEmployee';
+import Subject from './Subject';
 
-const testInterfaceEmployee: Employee = {
-  registration: 'FNC1234567891011',
-  salary: 1200.00,
-  admissionDate: new Date(),
 
-  generateRegistration(): string {
-    const randomStr = String(Date.now() * (Math.random() + 1)).replace(/\W/g, '');
+const obj1 = new Subject('Matemática');
+const obj2 = new Subject('ca');
 
-    return `FNC${randomStr}`;
-  },
-};
+console.log(obj1);
+console.log(obj2);
 
-console.log(testInterfaceEmployee);

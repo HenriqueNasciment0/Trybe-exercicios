@@ -1,12 +1,7 @@
 "use strict";
 exports.__esModule = true;
-var testInterfaceEmployee = {
-    registration: 'FNC1234567891011',
-    salary: 1200.00,
-    admissionDate: new Date(),
-    generateRegistration: function () {
-        var randomStr = String(Date.now() * (Math.random() + 1)).replace(/\W/g, '');
-        return "FNC".concat(randomStr);
-    }
-};
-console.log(testInterfaceEmployee);
+var Subject_1 = require("./Subject");
+var obj1 = new Subject_1["default"]('Matemática');
+var obj2 = new Subject_1["default"]('ca');
+console.log(obj1);
+console.log(obj2);
