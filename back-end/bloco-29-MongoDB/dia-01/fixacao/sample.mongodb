@@ -1,0 +1,12 @@
+const database = 'sample';
+
+// Create a new database.
+use(database);
+
+// Create a new collection.
+db.products.insertOne({
+    "productName": "Caixa",
+    "price": 20
+});
+
+
