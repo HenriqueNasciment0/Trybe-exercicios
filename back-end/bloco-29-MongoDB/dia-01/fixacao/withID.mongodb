@@ -1,0 +1,6 @@
+use('sample');
+
+db.products.insertOne({ _id: 1, "productName": "Caixa",
+    "price": 20 })
+
+
