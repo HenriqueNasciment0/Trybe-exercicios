@@ -1,0 +1,7 @@
+use('business')
+
+
+//Ordene os restaurantes de forma decrescente baseado nas avaliações.
+
+
+db.restaurants.find().sort({ rating: -1 })
