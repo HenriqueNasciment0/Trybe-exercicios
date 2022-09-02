@@ -1,0 +1,12 @@
+use('cinema')
+
+// 🚀 Agora retorne os filmes que contenham action e sci-fi
+// no array category e possuem nota do IMDB maior do que 7.
+
+
+db.movies.find({ $and:
+    [
+      { imdbRating: { $gt: 7 } },
+      { category: { $all: ['action', 'sci-fi'] } }
+    ]
+})
