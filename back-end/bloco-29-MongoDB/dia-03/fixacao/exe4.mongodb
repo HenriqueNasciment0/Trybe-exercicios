@@ -4,8 +4,6 @@ use('cinema')
 // exibindo apenas os campos title e ratings.
 
 
-
-
 db.movies.find({
     ratings: { $elemMatch: { $gte: 100, $lte: 105 } } },
     {
