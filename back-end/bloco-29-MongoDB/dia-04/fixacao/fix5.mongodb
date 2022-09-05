@@ -1,0 +1,10 @@
+use('conteudo_trybe')
+
+db.products.updateOne(
+  { _id: 100 },
+  { $set: {
+      "tags.1": "rain gear",  //update no segundo elemento do array
+      "ratings.0.rating": 2   // updade no primeiro elemento do array de objetos, na chave rating.
+    }
+  }
+);
