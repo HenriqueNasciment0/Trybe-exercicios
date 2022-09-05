@@ -1,0 +1,6 @@
+use('conteudo_trybe')
+
+db.products.updateOne(
+  { _id: 100 },
+  { $set: { "details.make": "zzz" } }
+);
