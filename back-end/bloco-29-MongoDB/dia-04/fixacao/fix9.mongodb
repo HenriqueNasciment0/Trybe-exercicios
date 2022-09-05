@@ -1,0 +1,7 @@
+use('conteudo_trybe')
+
+db.scores.updateOne(
+    { _id: 1 },
+     { $max: { highScore: 950 }
+     }
+);
