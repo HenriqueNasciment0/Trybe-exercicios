@@ -1,0 +1,30 @@
+use('class')
+
+db.movies.updateOne({
+    title: 'Home Alone'
+},
+{
+    $push: {
+        directors: {
+            $each: [
+                {
+                    name: 'Henrique',
+                    lastName: 'Sousa',
+                    age: 29
+                },
+                {
+                    name: 'Lua',
+                    lastName: 'Abreu',
+                    age: 29
+                },
+                {
+                    name: 'Bonnie',
+                    lastName: 'Meneguel',
+                    age: 8
+                }
+            ],
+        $sort: { age: -1 },  // ordenar de forma decrescente
+        $slice: 2,  // exibir apenas os 2 primeiros itens ordenados.
+        }
+    }
+})
