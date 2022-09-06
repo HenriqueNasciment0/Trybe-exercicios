@@ -1,0 +1,6 @@
+use('class')
+
+db.movies.updateOne(
+    { title: 'Godzilla'},
+    { $addToSet: { category: { $each: [ 'adventure', 'sci-fi' ]}}}
+)
