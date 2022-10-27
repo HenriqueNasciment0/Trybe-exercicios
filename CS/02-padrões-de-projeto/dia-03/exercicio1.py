@@ -32,3 +32,11 @@ class LogWarning:
 
     def dispara_log(message):
         return f"{LARANJA}O sistema está lento!{RESET}"
+
+
+class LogSuccess:
+    def __init__(self, log):
+        self.log = log
+
+    def dispara_log(message):
+        return f"{VERDE}O sistema está funcionando!{RESET}"
