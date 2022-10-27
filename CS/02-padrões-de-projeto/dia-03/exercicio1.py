@@ -24,3 +24,11 @@ class LogError:
 
     def dispara_log(message):
         return f"{VERMELHO}O sistema está com erros!{RESET}"
+
+
+class LogWarning:
+    def __init__(self, log):
+        self.log = log
+
+    def dispara_log(message):
+        return f"{LARANJA}O sistema está lento!{RESET}"
