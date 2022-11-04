@@ -8,3 +8,6 @@ print("TIPO DO ARQUIVO: ", response.headers["Content-Type"])
 
 response2 = requests.post("http://httpbin.org/post", data="some content")
 print(response2.text)
+
+response3 = response = requests.get("http://httpbin.org/get", headers={"Accept": "application/json"})
+print(response3.text)
