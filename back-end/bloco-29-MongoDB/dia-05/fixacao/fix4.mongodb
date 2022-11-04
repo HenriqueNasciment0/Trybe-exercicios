@@ -1,0 +1,8 @@
+use('class')
+
+db.movies.updateOne({
+    title: 'Godzilla'
+},
+{
+    $pop: { category: -1 } // remove o primeiro item do array category
+})

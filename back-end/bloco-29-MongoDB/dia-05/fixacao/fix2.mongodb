@@ -1,0 +1,22 @@
+use('class')
+
+db.movies.updateOne({
+    title: 'Batman'
+},
+{
+    $push: {
+        directors: {
+            $each: [
+                {
+                    name: 'Henrique',
+                    lastName: 'Sousa'
+                },
+                {
+                    name: 'Lua',
+                    lastName: 'Abreu'
+                }
+            ]
+
+        }
+    }
+})
