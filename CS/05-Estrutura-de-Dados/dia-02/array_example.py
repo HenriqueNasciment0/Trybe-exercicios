@@ -1,6 +1,4 @@
-"""Perceba que temos uma coleção de valores
-e operações que atuam sobre estes valores,
-de acordo com o que foi definido pelo TAD."""
+import sys
 
 
 class ListaArray:
@@ -24,18 +22,40 @@ class ListaArray:
         # insere um elemento no índice informado
         self.data.insert(index, value)
 
+    def remove(self, index):
+        # removeremos o item, retornando-o
+        return self.data.pop(index)
+
 
 # vamos inicializar e preencher uma estrutura de dados array
 array = ListaArray()
-array.set(0, "Felipe")
-array.set(1, "Ana")
-array.set(2, "Shirley")
-array.set(3, "Miguel")
+array_memory_size = sys.getsizeof(array.data)
+print(array_memory_size)
+array.set(0, "Marcos")
+array.set(1, "Patrícia")
+# quando começamos as inserções o valor muda
+array_memory_size = sys.getsizeof(array.data)
+print(array_memory_size)  # 56
 
-# para acessar um elemento do array, utilizamos seu índice
-print(array.get(0))  # saída: Felipe
-print(array.get(2))  # saída: Shirley
-print("-----")
+array.set(2, "Matheus")
+array.set(3, "Giovana")
+# como um espaço adicional é reservado o valor não é modificado
+array_memory_size = sys.getsizeof(array.data)
+print(array_memory_size) # 88
+
+array.set(4, "Alberto")
+array.set(5, "Marta")
+array.set(6, "Túlio")
+array.set(7, "Michelle")
+array_memory_size = sys.getsizeof(array.data)
+print(array_memory_size) # 120
+
+array.set(0, "Marcos")
+array.set(1, "Patrícia")
+print(array)  # saída: ['Marcos', 'Patrícia']
+
+array.remove(0)  # retorna a string "Marcos"
+print(array)  # saída: ['Patrícia']
 
 # podemos iterar sobre seus elementos da seguinte maneira
 index = 0
