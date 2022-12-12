@@ -4,7 +4,7 @@ class Conjunto:
         self.last_item = 0
 
     def add(self, item):
-        if item not in self.list:
+        if not self.list[item]:
             self.list[item] = True
         if item > self.last_item:
             self.last_item = item
@@ -33,7 +33,7 @@ if __name__ == "__main__":
     print(conj)
 
     conj2 = Conjunto()
-    for i in [1, 2, 3]:
+    for i in [40, 20, 10]:
         conj2.add(i)
 
     print(conj2)
