@@ -21,6 +21,9 @@ class Conjunto:
         string += "}"
         return string
 
+    def __contains__(self, item):
+        return self.list[item]
+
 
 if __name__ == "__main__":
     conj = Conjunto()
@@ -34,5 +37,7 @@ if __name__ == "__main__":
         conj2.add(i)
 
     print(conj2)
+
+    print(conj.__contains__(10))
 
 
