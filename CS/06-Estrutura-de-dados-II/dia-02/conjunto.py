@@ -24,20 +24,32 @@ class Conjunto:
     def __contains__(self, item):
         return self.list[item]
 
+    def union(self, conjuntoB):
+        new_conjunto = Conjunto()
+
+        for index in range(1001):
+            if self.list[index] or conjuntoB.list[index]:
+                new_conjunto.add(index)
+
+        return new_conjunto
+
 
 if __name__ == "__main__":
-    conj = Conjunto()
-    for item in [0, 10, 100, 1000]:
-        conj.add(item)
+    # conj = Conjunto()
+    # for item in [0, 10, 100, 1000]:
+    #     conj.add(item)
 
-    print(conj)
+    # print(conj)
+
+    conj1 = Conjunto()
+    for i in range(1, 11):
+        conj1.add(i)
 
     conj2 = Conjunto()
-    for i in [40, 20, 10]:
+    for i in range(10, 21):
         conj2.add(i)
 
-    print(conj2)
-
-    print(conj.__contains__(10))
+    conj3 = conj1.union(conj2)
+    print(conj3)
 
 
