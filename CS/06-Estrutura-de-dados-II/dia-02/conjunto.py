@@ -40,7 +40,28 @@ class Conjunto:
             if self.list[index] and conjuntoB.list[index]:
                 new_conjunto.add(index)
 
-        return new_conjunto
+        return
+
+    def difference(self, conjuntoB):
+        new_conjunto = Conjunto()
+
+        for index in range(1001):
+            if self.list[index] and not conjuntoB.list[index]:
+                return new_conjunto.add(index)
+
+    def issubset(self, conjuntoB):
+        for index in range(1001):
+            if self.list[index] and not conjuntoB.list[index]:
+                return False
+
+        return True
+
+    def issuperset(self, conjuntoB):
+        for index in range(1001):
+            if conjuntoB.list[index] and not self.list[index]:
+                return False
+
+        return True
 
 
 if __name__ == "__main__":
@@ -56,9 +77,13 @@ if __name__ == "__main__":
 
     conj2 = Conjunto()
     for i in [7, 2, 10]:
-        conj2.add(i)
+       conj2.add(i)
 
-    conj3 = conj1.intersection(conj2)
-    print(conj3)
+    conj3 = Conjunto()
+    conj4 = conj1.union(conj2)
+
+    print(conj1.issubset(conj4))
+    print(conj4.issuperset(conj1))
+    print(conj4.issubset(conj3))
 
 
